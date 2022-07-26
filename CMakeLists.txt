@@ -46,4 +46,7 @@ file(GLOB_RECURSE QRC_FILES *.qrc)
 source_group("Ui Files" FILES ${UI_FILES})
 source_group("Qrc Files" FILES ${QRC_FILES})
 
-add_subdirectory(main)
+add_subdirectory(colorchangergb)
+
+add_subdirectory(colorchangeysh)
+

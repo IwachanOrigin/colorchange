@@ -6,7 +6,7 @@ set(main_src
 )
 
 add_executable(
-  ${PROJECT_NAME}
+  "colorchange_ysh"
   WIN32
   ${main_src}
   ${UI_FILES}
@@ -16,7 +16,7 @@ add_executable(
 
 # Link
 target_link_libraries(
-  ${PROJECT_NAME}
+  "colorchange_ysh"
   Qt5::Widgets
 )
 
