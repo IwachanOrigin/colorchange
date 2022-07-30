@@ -4,13 +4,6 @@
 #include <QGraphicsPixmapItem>
 #include <QColor>
 
-const unsigned int MAX_X = 512;
-const unsigned int MAX_Y = 512;
-
-const int Y = 128;
-const int CR = 255;
-const int CB = 255;
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -29,31 +22,6 @@ void MainWindow::closeEvent(QCloseEvent* e)
 
 void MainWindow::paintEvent(QPaintEvent *e)
 {
-#if 0
-    scene.clear();
-    uchar rData[MAX_X * MAX_Y] = {};
-    uchar gData[MAX_X * MAX_Y] = {};
-    uchar bData[MAX_X * MAX_Y] = {};
-    makeColorMap(rData, gData, bData, MAX_X, MAX_Y);
-    unsigned char *pR = &rData[0];
-    unsigned char *pG = &gData[0];
-    unsigned char *pB = &bData[0];
-    QImage image(MAX_X, MAX_Y, QImage::Format_RGB32);
-    for (int i = 0; i < MAX_Y; i++)
-    {
-        for (int j = 0; j < MAX_X; j++)
-        {
-            int r = (int)*(pR++);
-            int g = (int)*(pG++);
-            int b = (int)*(pB++);
-            image.setPixel(j, i, qRgb(r, g, b));
-        }
-    }
-
-    QGraphicsPixmapItem *image_item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
-    scene.addItem(image_item);
-    ui.graphicsView->setScene(&scene);
-#endif
 }
 
 QImage MainWindow::changeRGB(QImage inputImg, float gain_r, float gain_g, float gain_b, float offset_r, float offset_g, float offset_b)
